@@ -2,9 +2,21 @@
 
 const initState = {count:0}
 
-export function countReducer(state = initState, action) {
+export default function countReducer(state = initState, action) {
 
-    console.log("count reducer.........")
+    const {type, payload} = action
+    
+    if(type !== 'COUNTER') {
+        return state
+    }
+
+    if(payload === 'INC'){
+        return { count : state.count + 1}
+    }else if(payload === 'DEC') {
+        return { count : state.count - 1}
+    }
+
+    console.log("count reducer.........", action)
     
     return state
 }

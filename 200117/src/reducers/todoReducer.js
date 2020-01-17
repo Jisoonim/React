@@ -2,9 +2,15 @@
 
 const initState = {arr:[]}
 
-export function todoReducer(state = initState, action) {
+export default function todoReducer(state = initState, action) {
 
-    console.log("todo reducer.........")
+    const {type, payload} = action
+    
+    if(type !== 'TODO') {
+        return state
+    }
+
+    console.log("todo reducer.........", action)
     
     return state
 }

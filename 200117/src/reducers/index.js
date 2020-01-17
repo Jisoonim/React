@@ -1,4 +1,4 @@
-import {combineReducers} from 'react-redux'
+import {combineReducers} from 'redux'
 
 import countReducer from './countReducer'
 import todoReducer from './todoReducer'
