@@ -10,10 +10,12 @@ import {
 } from 'react-native';
 import Heading from './Heading';
 import Button from './Button';
+import DisplayWeather from './DisplayWeather';
 
 const App = () => {
 
     const [run,setRun] = useState(false)
+    const [weather, setWeather] = useState(true)
 
     const changeRun = () => {
         setRun(!run)
@@ -35,6 +37,7 @@ const App = () => {
         console.log("use effect................")
         getWeather().then(result => {
             console.log(result)
+            setWeather(result)
         })
     },[run])
 
@@ -47,7 +50,7 @@ const App = () => {
             <Image style={style.box} source={imgObj2}></Image> */}
             <Heading title={"Today's Weather"}></Heading>
             <Button submitTodo={changeRun} buttonText="GET DATA"></Button>
-            <Heading title={"Today's Weather"}></Heading>
+            <DisplayWeather weather={weather}></DisplayWeather>
 
         </View>
     )
