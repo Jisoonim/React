@@ -11,14 +11,21 @@ import {
 
 import {createAppContainer} from 'react-navigation';
 import {createStackNavigator} from 'react-navigation-stack';
+import {createBottomTabNavigator} from 'react-navigation-tabs'
 import Home from './Home'
 import About from './About'
+import Contact from './Contact'
 
-const MainNavigator = createStackNavigator({
+const HomeNav = createStackNavigator({
     Home: {screen: Home},
     About: {screen: About},
   });
+
+  const AppTabs = createBottomTabNavigator({
+    HomeNav: {screen: HomeNav},
+    Contact: {screen: Contact}
+  })
   
-const App = createAppContainer(MainNavigator);
+const App = createAppContainer(AppTabs);
   
 export default App;
