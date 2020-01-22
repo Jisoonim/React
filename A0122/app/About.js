@@ -7,12 +7,21 @@ import {
   View,
   Text,
   StatusBar,
+  Alert
 } from 'react-native';
 
-const About = () => {
+import {NavigationEvents} from 'react-navigation'
+
+const About = ({navigation}) => {
+
+    console.log("-----------------About-----------------")
+    console.log(navigation)
+
+    console.log(navigation.getParam('code', '00000'))
+
     return (
         <View style={style.container}>
-            
+            <NavigationEvents onDidFocus={() => Alert.alert("About")}></NavigationEvents>
         </View>
     )
 }

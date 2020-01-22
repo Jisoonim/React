@@ -10,6 +10,8 @@ import {
   Button
 } from 'react-native';
 
+import {NavigationEvents} from 'react-navigation'
+
 const Home = ({navigation}) => {
 
     console.log("-----------------Home-----------------")
@@ -19,7 +21,8 @@ const Home = ({navigation}) => {
 
     return (
         <View style={style.container}>
-            <Button title="About" onPress= {() => navigate('About') }></Button>
+            <NavigationEvents onDidFocus={() => console.log("focus")}></NavigationEvents>
+            <Button title="About" onPress= {() => navigate('About', {code: 'A0001'}) }></Button>
             
         </View>
     )

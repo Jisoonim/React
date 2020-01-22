@@ -10,7 +10,11 @@ import {
   StatusBar,
 } from 'react-native';
 
-const Contact = () => {
+const Contact = ({navigation}) => {
+
+    console.log("-----------------Contact-----------------")
+    console.log(navigation)
+
     return (
         <View style={style.container}>
             
