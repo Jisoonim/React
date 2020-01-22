@@ -16,7 +16,7 @@ const ImageList = ({arr}) => {
     return( /*넷플릭스 기능 / 옆으로 스크롤하는 형식 (horizontal) */
         <View>
             <ScrollView horizontal={true}> 
-                {list}
+              {list}
             </ScrollView>
         </View>
         
